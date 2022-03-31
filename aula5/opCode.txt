@@ -1,0 +1,91 @@
+saida <= "000000000000" when  opcode = NOP  else
+         "000000111010" when  opcode = LDA  else
+         "000000100010" when  opcode = SOMA else
+         "000000101010" when  opcode = SUB  else	
+         "000001111000" when  opcode = LDI  else
+	 "000000011001" when  opcode = STA  else
+	 "010000000000" when  opcode = JMP  else
+	 "000010000000" when (opcode = JEQ and flagEQ = '1')  else
+	 "000000101110" when  opcode = CEQ  else
+	 "100100000000" when  opcode = JSR  else
+	 "001000000000" when  opcode = RET  else
+         "000000000000";  -- NOP para os opcodes Indefinidos
+
+  constant NOP   := "0000";
+  constant LDA   := "0001";
+  constant SOMA  := "0010";
+  constant SUB   := "0011";
+  constant LDI   := "0100";
+  constant STA   := "0101";
+  constant JMP   := "0110";
+  constant JEQ   := "0111";
+  constant CEQ   := "1000";
+  constant JSR   := "1001";
+  constant RET   := "1010";
+
+tmp(0)  :=  "1001 000001110"; --JSR @14	Deve desviar para a posição 14
+tmp(1)  :=  "0110 000000101"; --JMP @5	Deve desviar para a posição 5
+tmp(2)  :=  "0111 000001001"; --JEQ @9	Deve desviar para a posição 9
+tmp(3)  :=  "0000 000000000"; --NOP	
+tmp(4)  :=  "0000 000000000"; --NOP	
+tmp(5)  :=  "0100 000000101"; --LDI $5	Carrega acumulador com valor 5
+tmp(6)  :=  "0101 000000000"; --STA @0	Armazena 5 na posição 0 da memória
+tmp(7)  :=  "1000 000000000"; --CEQ @0	A comparação deve fazer o flagIgual ser 1
+tmp(8)  :=  "0110 000000010"; --JMP @2	Vai testar o flagIgual depois do jump
+tmp(9)  :=  "0000 000000000"; --NOP	
+tmp(10) :=  "0100 000000100"; --LDI $4	Carrega acumulador com valor 4
+tmp(11) :=  "1000 000000000"; --CEQ @0	Compara com valor 5, deve fazer o flagIgual ser 0
+tmp(12) :=  "0111 000000011"; --JEQ @3	Não deve ocorrer o desvio
+tmp(13) :=  "0110 000001101"; --JMP @13	Fim. Deve ficar neste laço
+tmp(14) :=  "0110 000001100"; --NOP	
+tmp(15) :=  "1010 000000000"; --RET	Retorna para a posição 1
+
+				--JSR @14	Deve desviar para a posição 14
+				--JMP @5	Deve desviar para a posição 5
+				--JEQ @9	Deve desviar para a posição 9
+				--NOP	
+				--NOP	
+				--LDI $5	Carrega acumulador com valor 5
+				--STA @0	Armazena 5 na posição 0 da memória
+				--CEQ @0	A comparação deve fazer o flagIgual ser 1
+				--JMP @2	Vai testar o flagIgual depois do jump
+				--NOP	
+				--LDI $4	Carrega acumulador com valor 4
+				--CEQ @0	Compara com valor 5, deve fazer o flagIgual ser 0
+				--JEQ @3	Não deve ocorrer o desvio
+				--JMP @13	Fim. Deve ficar neste laço
+				--NOP	
+				--RET	Retorna para a posição 1
+
+
+JMP            <= Sinais_Controle(10);
+RET            <= Sinais_Controle(9);
+JSR            <= Sinais_Controle(8);
+JEQ            <= Sinais_Controle(7);
+SelMUX         <= Sinais_Controle(6);
+Habilita_A     <= Sinais_Controle(5);
+Operacao_ULA   <= Sinais_Controle(4 downto 3);
+habilitaFlagEQ <= Sinais_Controle(2);
+enable_R_RAM   <= Sinais_Controle(1);
+enable_W_RAM   <= Sinais_Controle(0);
+
+
+constant JEQ  : std_logic_vector(3 downto 0) := "0111";
+constant CEQ  : std_logic_vector(3 downto 0) := "1000";
+constant JSR  : std_logic_vector(3 downto 0) := "1001";
+constant RET  : std_logic_vector(3 downto 0) := "1010";
+
+
+
+
+saida <= "000000000000" when  opcode = NOP  else
+         "000000111010" when  opcode = LDA  else
+         "000000100010" when  opcode = SOMA else
+         "000000101010" when  opcode = SUB  else	
+         "000001111000" when  opcode = LDI  else
+	 "000000011001" when  opcode = STA  else
+	 "010000000000" when  opcode = JMP  else
+	 "000010000000" when (opcode = JEQ and flagEQ = '1')  else
+	 "000000101110" when  opcode = CEQ  else
+	 "100100000000" when  opcode = JSR  else
+	 "001000000000" when  opcode = RET  else

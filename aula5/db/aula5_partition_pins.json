@@ -1,0 +1,197 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[9]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[10]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDB[11]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDIMED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDIMED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDIMED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDIMED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PC_OUT[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDFLAGEQ",
+					"strict" : false
+				},
+				{
+					"name" : "LEDFLAG0",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OUTMUX1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OP_ULAMUX[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_OP_ULAMUX[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SEL_MUX1",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
