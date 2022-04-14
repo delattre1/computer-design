@@ -23,8 +23,9 @@ entity Aula5 is
     SW       : in  std_logic_vector(9 downto 0);
 	 
     LEDR     : out std_logic_vector(dataWidthRAM-1 downto 0);
-	 LEDG     : out std_logic_vector(dataWidthRAM-1 downto 0);
+	 SAIDARAM     : out std_logic_vector(dataWidthRAM-1 downto 0);
     LEDB     : out std_logic_vector(dataWidthOutDecoder-1 downto 0);
+	 LED_SAIDAULA: out std_logic_vector(larguraDados-1 downto 0);
 	 LEDIMED  : out std_logic_vector(8 downto 0);
 	 PC_OUT   : out std_logic_vector(larguraEnderecos-1 downto 0);
 	 LEDFLAGEQ: out std_logic;
@@ -188,15 +189,16 @@ enable_W_RAM   <= Sinais_Controle(0);
 
 
 -- A ligacao dos LEDs:
-LEDR    <= REG1_ULA_A;
-LEDB    <= Sinais_Controle;
-LEDG    <= saidaDadosRAM;
+LEDR     <= REG1_ULA_A;
+LEDB     <= Sinais_Controle;
+SAIDARAM <= saidaDadosRAM;
 LEDIMED <= Imediato_addr;
 LEDFLAGEQ      <= flagEq;
 LEDFLAG0       <= flagZero;
 LED_OUTMUX1    <= out_mux1;
 LED_OP_ULAMUX  <= Operacao_ULA;
 LED_SEL_MUX1   <= selmux;
+LED_SAIDAULA   <= Saida_ULA;
 -- LEDR (9) <= SelMUX;
 -- LEDR (8) <= Habilita_A;
 -- LEDR (7) <= Reset_A;

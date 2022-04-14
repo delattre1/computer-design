@@ -36,6 +36,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "SAIDARAM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDARAM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDARAM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDARAM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDARAM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDARAM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDARAM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDARAM[7]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDB[0]",
 					"strict" : false
 				},
@@ -84,6 +116,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED_SAIDAULA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SAIDAULA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SAIDAULA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SAIDAULA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SAIDAULA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SAIDAULA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SAIDAULA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_SAIDAULA[7]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDIMED[0]",
 					"strict" : false
 				},
@@ -97,6 +161,10 @@
 				},
 				{
 					"name" : "LEDIMED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDIMED[8]",
 					"strict" : false
 				},
 				{

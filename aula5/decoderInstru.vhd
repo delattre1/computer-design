@@ -28,24 +28,39 @@ architecture comportamento of decoderInstru is
   constant JSR  : std_logic_vector(3 downto 0) := "1001";
   constant RET  : std_logic_vector(3 downto 0) := "1010";
 
+  alias enable_W_RET   : std_logic is saida(11);
+  alias JMP2           : std_logic is saida(10);
+  alias RET2           : std_logic is saida(9);
+  alias JSR2           : std_logic is saida(8);
+  alias JEQ2           : std_logic is saida(7);
+  alias SelMUX         : std_logic is saida(6);
+  alias Habilita_A     : std_logic is saida(5);
+  alias Operacao_ULA   : std_logic_vector (1 downto 0) is saida(4 downto 3);
+  alias habilitaFlagEQ : std_logic is saida(2);
+  alias enable_R_RAM   : std_logic is saida(1);
+  alias enable_W_RAM   : std_logic is saida(0);
 
 
 begin
-saida <= "000000000000" when  opcode = NOP  else
-         "000000111010" when  opcode = LDA  else
-         "000000100010" when  opcode = SOMA else
-         "000000101010" when  opcode = SUB  else	
-         "000001111000" when  opcode = LDI  else
-			"000000011001" when  opcode = STA  else
-			"010000000000" when  opcode = JMP  else
-			"000010000000" when (opcode = JEQ and flagEQ = '1')  else
-			"000000101110" when  opcode = CEQ  else
-			"100100000000" when  opcode = JSR  else
-			"001000000000" when  opcode = RET  else
-         "000000000000";  -- NOP para os opcodes Indefinidos
-			
-selMuxPC <= "10" when opcode = RET else
-				"01" when (opcode = JMP or  opcode = JSR) else
-				"01" when (opcode = JEQ and flagEQ = '1') else
-				"00";
+
+	enable_W_RET   <= '1'  when (opcode = JSR)   else '0';   
+	JMP2           <= '1'  when (opcode = JMP)   else '0';
+	RET2           <= '1'  when (opcode = RET)   else '0';
+	JSR2           <= '1'  when (opcode = JSR)   else '0';
+	JEQ2           <= '1'  when (opcode = JEQ and flagEQ = '1')   else '0';
+	SelMUX         <= '1'  when (opcode = LDI)   else '0';
+	Habilita_A     <= '1'  when (opcode = LDA or opcode = SOMA or opcode = SUB or opcode = LDI)   else '0';
+	Operacao_ULA   <= "00" when (opcode = SOMA)  else
+							"01" when (opcode = SUB or opcode = CEQ) else
+							"11";
+	habilitaFlagEQ <= '1'  when (opcode = CEQ)   else '0';
+	enable_R_RAM   <= '1'  when (opcode = LDA or opcode = SOMA or opcode = SUB or opcode = CEQ) else '0';
+	enable_W_RAM   <= '1'  when (opcode = STA)   else '0';
+
+				
+	selMuxPC <= "10" when opcode = RET else
+					"01" when (opcode = JMP or  opcode = JSR) else
+					"01" when (opcode = JEQ and flagEQ = '1') else
+					"00";
+					
 end architecture;
